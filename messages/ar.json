@@ -470,7 +470,10 @@
       "submit": "تسجيل الدخول",
       "error": "البريد الإلكتروني أو كلمة المرور غير صحيحة.",
       "no_account": "ليس لديك حساب بعد؟",
-      "browse_courses": "اكتشف التكوينات"
+      "browse_courses": "اكتشف التكوينات",
+      "demo_accounts": "حسابات تجريبية:",
+      "demo_member": "عضو: demo@businessalgerie.com / demo123",
+      "demo_admin": "مدير: admin@businessalgerie.com / admin123"
     },
     "dashboard": {
       "title": "فضائي الخاص",

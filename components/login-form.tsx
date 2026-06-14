@@ -18,6 +18,7 @@ export function LoginForm({ locale }: { locale: Locale }) {
   const [status, setStatus] = React.useState<
     "idle" | "loading" | "error"
   >("idle");
+  const [errorMsg, setErrorMsg] = React.useState("");
 
   const validate = () => {
     const next: Record<string, string> = {};
@@ -36,6 +37,7 @@ export function LoginForm({ locale }: { locale: Locale }) {
         return next;
       });
     }
+    if (errorMsg) setErrorMsg("");
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -55,12 +57,15 @@ export function LoginForm({ locale }: { locale: Locale }) {
       });
 
       if (res.ok) {
-        router.push(`/${locale}/member`);
-        router.refresh();
+        window.location.href = `/${locale}/member`;
       } else {
+        const data = await res.json().catch(() => ({}));
+        setErrorMsg(data.error === "invalid_credentials" ? t("error") : t("error"));
         setStatus("error");
       }
-    } catch {
+    } catch (err) {
+      console.error("Login error", err);
+      setErrorMsg(t("error"));
       setStatus("error");
     }
   };
@@ -115,9 +120,15 @@ export function LoginForm({ locale }: { locale: Locale }) {
       {status === "error" && (
         <div className="flex items-center justify-center gap-2 text-sm font-medium text-destructive">
           <AlertCircle className="size-4" />
-          {t("error")}
+          {errorMsg || t("error")}
         </div>
       )}
+
+      <div className="rounded-lg bg-brand-soft p-3 text-xs text-brand-text">
+        <p className="font-medium">{t("demo_accounts")}</p>
+        <p>{t("demo_member")}</p>
+        <p>{t("demo_admin")}</p>
+      </div>
     </form>
   );
 }

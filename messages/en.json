@@ -470,7 +470,10 @@
       "submit": "Log in",
       "error": "Invalid email or password.",
       "no_account": "No account yet?",
-      "browse_courses": "Browse courses"
+      "browse_courses": "Browse courses",
+      "demo_accounts": "Demo accounts:",
+      "demo_member": "Member: demo@businessalgerie.com / demo123",
+      "demo_admin": "Admin: admin@businessalgerie.com / admin123"
     },
     "dashboard": {
       "title": "My member area",

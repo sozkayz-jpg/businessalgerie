@@ -14,6 +14,7 @@ import { formatPriceDZD, type Course } from "@/lib/courses";
 import { type Locale } from "@/i18n/routing";
 import { ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 
 export function CourseCard({
   course,
@@ -26,11 +27,22 @@ export function CourseCard({
   const title = course.title[locale] ?? course.title.en;
 
   return (
-    <Card className="relative flex flex-col">
+    <Card className="relative flex flex-col overflow-hidden">
       {course.isFlagship && (
-        <Badge className="absolute top-4 right-4 bg-brand-accent text-white hover:bg-brand-accent">
+        <Badge className="absolute top-4 right-4 z-10 bg-brand-accent text-white hover:bg-brand-accent">
           {t("flagship_label")}
         </Badge>
+      )}
+      {course.image && (
+        <div className="relative aspect-video w-full overflow-hidden">
+          <Image
+            src={course.image}
+            alt={title}
+            fill
+            className="object-cover"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          />
+        </div>
       )}
       <CardHeader>
         <CardTitle className="text-xl">{title}</CardTitle>

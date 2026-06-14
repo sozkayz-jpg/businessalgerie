@@ -470,7 +470,10 @@
       "submit": "Se connecter",
       "error": "Email ou mot de passe incorrect.",
       "no_account": "Pas encore de compte ?",
-      "browse_courses": "Découvrir les formations"
+      "browse_courses": "Découvrir les formations",
+      "demo_accounts": "Comptes de démonstration :",
+      "demo_member": "Membre : demo@businessalgerie.com / demo123",
+      "demo_admin": "Admin : admin@businessalgerie.com / admin123"
     },
     "dashboard": {
       "title": "Mon espace membre",

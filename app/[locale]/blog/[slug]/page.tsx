@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Link } from "@/i18n/routing";
 import { buttonVariants } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -454,6 +455,19 @@ export default async function BlogArticlePage({
               {title}
             </h1>
           </header>
+
+          {post.image && (
+            <div className="relative mb-10 aspect-[2/1] w-full overflow-hidden rounded-xl">
+              <Image
+                src={post.image}
+                alt={title}
+                fill
+                className="object-cover"
+                priority
+                sizes="(max-width: 768px) 100vw, 800px"
+              />
+            </div>
+          )}
 
           <div className="prose prose-slate max-w-none">
             {article.intro[typedLocale]?.map((paragraph, index) => (

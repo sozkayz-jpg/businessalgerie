@@ -6,6 +6,7 @@ export type BlogPost = {
   category: Record<"fr" | "ar" | "en", string>;
   readingTime: number;
   videoId?: string;
+  image?: string;
 };
 
 export const BLOG_POSTS: BlogPost[] = [
@@ -29,6 +30,7 @@ export const BLOG_POSTS: BlogPost[] = [
     },
     readingTime: 5,
     videoId: "dQw4w9WgXcQ",
+    image: "/images/blog-risque-facebook.svg",
   },
   {
     slug: "independance-digitale",
@@ -50,6 +52,7 @@ export const BLOG_POSTS: BlogPost[] = [
     },
     readingTime: 6,
     videoId: "dQw4w9WgXcQ",
+    image: "/images/blog-independance-digitale.svg",
   },
   {
     slug: "premier-site-web",
@@ -71,6 +74,7 @@ export const BLOG_POSTS: BlogPost[] = [
     },
     readingTime: 7,
     videoId: "dQw4w9WgXcQ",
+    image: "/images/blog-premier-site-web.svg",
   },
   {
     slug: "e-commerce-algerie",
@@ -92,6 +96,7 @@ export const BLOG_POSTS: BlogPost[] = [
     },
     readingTime: 6,
     videoId: "dQw4w9WgXcQ",
+    image: "/images/blog-e-commerce-algerie.svg",
   },
 ];
 

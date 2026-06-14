@@ -14,6 +14,7 @@ import { type BlogPost } from "@/lib/blog";
 import { type Locale } from "@/i18n/routing";
 import { ArrowRight, Calendar, Clock } from "lucide-react";
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 
 export function BlogCard({
   post,
@@ -37,7 +38,18 @@ export function BlogCard({
   );
 
   return (
-    <Card className="relative flex flex-col">
+    <Card className="relative flex flex-col overflow-hidden">
+      {post.image && (
+        <div className="relative aspect-[2/1] w-full overflow-hidden">
+          <Image
+            src={post.image}
+            alt={title}
+            fill
+            className="object-cover"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          />
+        </div>
+      )}
       <CardHeader>
         <div className="mb-3 flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
           <Badge variant="secondary">{category}</Badge>
