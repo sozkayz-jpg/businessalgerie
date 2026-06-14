@@ -15,11 +15,11 @@ type Order = {
   name: string;
   email: string;
   phone: string;
-  courseSlug: string;
-  courseTitle: string;
+  course_slug: string;
+  course_title: string;
   amount: number;
   status: OrderStatus;
-  createdAt: string;
+  created_at: string;
 };
 
 const statusStyles: Record<OrderStatus, string> = {
@@ -88,13 +88,13 @@ export function AdminOrders({ locale }: { locale: Locale }) {
           <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
             <div className="space-y-1">
               <h2 className="font-heading text-lg font-semibold text-foreground">
-                {order.courseTitle}
+                {order.course_title}
               </h2>
               <p className="text-sm text-brand-text">
                 {order.name} · {order.email} · {order.phone}
               </p>
               <p className="text-sm text-brand-text">
-                {new Date(order.createdAt).toLocaleString(locale === "ar" ? "ar-DZ" : locale === "en" ? "en-GB" : "fr-FR")}
+                {new Date(order.created_at).toLocaleString(locale === "ar" ? "ar-DZ" : locale === "en" ? "en-GB" : "fr-FR")}
                 {" · "}
                 <span className="font-medium text-foreground">
                   {order.amount.toLocaleString(locale === "ar" ? "ar-DZ" : locale === "en" ? "en-US" : "fr-FR")} {currency}

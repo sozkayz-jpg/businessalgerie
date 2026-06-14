@@ -32,10 +32,17 @@ export async function POST(request: Request) {
     name,
     email,
     phone: phone || "",
-    courseSlug,
-    courseTitle,
+    course_slug: courseSlug,
+    course_title: courseTitle,
     amount,
   });
+
+  if (!order) {
+    return new Response(
+      JSON.stringify({ ok: false, error: "Failed to create order" }),
+      { status: 500 }
+    );
+  }
 
   if (resend) {
     try {

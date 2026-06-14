@@ -1,5 +1,4 @@
-import { promises as fs } from "fs";
-import { join } from "path";
+import { createAdminClient } from "@/lib/supabase/admin";
 
 export type OrderStatus = "pending" | "paid" | "validated" | "rejected";
 
@@ -8,57 +7,65 @@ export type Order = {
   name: string;
   email: string;
   phone: string;
-  courseSlug: string;
-  courseTitle: string;
+  course_slug: string;
+  course_title: string;
   amount: number;
   status: OrderStatus;
-  createdAt: string;
+  created_at: string;
 };
 
-const ORDERS_FILE = join(process.cwd(), "data", "orders.json");
+export async function getOrders(): Promise<Order[]> {
+  const supabase = createAdminClient();
+  const { data, error } = await supabase
+    .from("orders")
+    .select("*")
+    .order("created_at", { ascending: false });
 
-async function readOrders(): Promise<Order[]> {
-  try {
-    const raw = await fs.readFile(ORDERS_FILE, "utf8");
-    return JSON.parse(raw);
-  } catch {
+  if (error) {
+    console.error("getOrders error", error);
     return [];
   }
+
+  return (data as Order[]) || [];
 }
 
-async function writeOrders(orders: Order[]) {
-  await fs.mkdir(join(process.cwd(), "data"), { recursive: true });
-  await fs.writeFile(ORDERS_FILE, JSON.stringify(orders, null, 2) + "\n");
-}
+export async function createOrder(
+  order: Omit<Order, "id" | "status" | "created_at">
+): Promise<Order | null> {
+  const supabase = createAdminClient();
+  const { data, error } = await supabase
+    .from("orders")
+    .insert({
+      ...order,
+      status: "pending",
+    })
+    .select()
+    .single();
 
-export async function getOrders(): Promise<Order[]> {
-  const orders = await readOrders();
-  return orders.sort(
-    (a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
-  );
-}
+  if (error) {
+    console.error("createOrder error", error);
+    return null;
+  }
 
-export async function createOrder(order: Omit<Order, "id" | "status" | "createdAt">): Promise<Order> {
-  const orders = await readOrders();
-  const newOrder: Order = {
-    ...order,
-    id: crypto.randomUUID(),
-    status: "pending",
-    createdAt: new Date().toISOString(),
-  };
-  orders.push(newOrder);
-  await writeOrders(orders);
-  return newOrder;
+  return data as Order;
 }
 
 export async function updateOrderStatus(
   id: string,
   status: OrderStatus
 ): Promise<Order | null> {
-  const orders = await readOrders();
-  const index = orders.findIndex((o) => o.id === id);
-  if (index === -1) return null;
-  orders[index].status = status;
-  await writeOrders(orders);
-  return orders[index];
+  const supabase = createAdminClient();
+  const { data, error } = await supabase
+    .from("orders")
+    .update({ status })
+    .eq("id", id)
+    .select()
+    .single();
+
+  if (error) {
+    console.error("updateOrderStatus error", error);
+    return null;
+  }
+
+  return data as Order;
 }

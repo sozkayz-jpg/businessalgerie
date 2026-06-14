@@ -10,7 +10,7 @@ Site vitrine, catalogue de formations, tunnel de vente CCP, espace membre et bac
 - next-intl (FR / AR / EN)
 - shadcn/ui + Base UI
 - Resend (emails)
-- Auth maison par cookie signé (JWT via `jose`)
+- Supabase Auth + Supabase PostgreSQL
 
 ## Pages principales
 
@@ -37,8 +37,18 @@ Ouvrir [http://localhost:3000](http://localhost:3000).
 
 ## Comptes de démonstration
 
-| Email | Mot de passe | Rôle |
+## Configuration Supabase
+
+1. Créer un projet sur [supabase.com](https://supabase.com)
+2. Exécuter `supabase/schema.sql` dans l'éditeur SQL
+3. Créer 2 utilisateurs dans Auth > Users (avec email confirmé) :
+
+| Email | Mot de passe | Rôle (user_metadata) |
 |---|---|---|
+| `demo@businessalgerie.com` | `demo123` | `{ole: member}` |
+| `admin@businessalgerie.com` | `admin123` | `{ole: admin}` |
+
+## Comptes de démo|---|---|
 | `demo@businessalgerie.com` | `demo123` | Membre |
 | `admin@businessalgerie.com` | `admin123` | Admin |
 
@@ -50,7 +60,7 @@ Ouvrir [http://localhost:3000](http://localhost:3000).
    - `RESEND_API_KEY` — pour l'envoi d'emails
 3. Déployer.
 
-> Note : les commandes sont stockées dans `data/orders.json` pour le MVP. En production à fort volume, remplacer par Supabase/Vercel Postgres.
+> Note : les commandes sont stockées dans Supabase PostgreSQL.
 
 ## Scripts
 

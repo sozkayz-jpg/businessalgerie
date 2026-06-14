@@ -1,11 +1,6 @@
-import { cookies } from "next/headers";
+import { createClient } from "@/lib/supabase/server";
+import { createAdminClient } from "@/lib/supabase/admin";
 import { redirect } from "next/navigation";
-import { NextRequest } from "next/server";
-import { SignJWT, jwtVerify } from "jose";
-
-const secret = new TextEncoder().encode(
-  process.env.AUTH_SECRET || "change-me-in-production"
-);
 
 export type User = {
   email: string;
@@ -13,55 +8,46 @@ export type User = {
   role: "member" | "admin";
 };
 
-const DEMO_USERS: Record<string, { password: string; name: string; role: User["role"] }> = {
-  "demo@businessalgerie.com": { password: "demo123", name: "Utilisateur démo", role: "member" },
-  "admin@businessalgerie.com": { password: "admin123", name: "Admin", role: "admin" },
-};
-
 export async function signIn(email: string, password: string): Promise<User | null> {
-  const user = DEMO_USERS[email.toLowerCase()];
-  if (!user || user.password !== password) {
+  const supabase = await createClient();
+  const { data, error } = await supabase.auth.signInWithPassword({
+    email,
+    password,
+  });
+
+  if (error || !data.user) {
+    console.error("signIn error", error);
     return null;
   }
 
-  const token = await new SignJWT({ email, name: user.name, role: user.role })
-    .setProtectedHeader({ alg: "HS256" })
-    .setIssuedAt()
-    .setExpirationTime("7d")
-    .sign(secret);
+  const role = data.user.user_metadata?.role || "member";
+  const name = data.user.user_metadata?.name || email;
 
-  const cookieStore = await cookies();
-  cookieStore.set("session", token, {
-    httpOnly: true,
-    secure: process.env.NODE_ENV === "production",
-    sameSite: "lax",
-    path: "/",
-    maxAge: 60 * 60 * 24 * 7,
-  });
-
-  return { email, name: user.name, role: user.role };
+  return {
+    email: data.user.email!,
+    name,
+    role,
+  };
 }
 
 export async function signOut() {
-  const cookieStore = await cookies();
-  cookieStore.delete("session");
+  const supabase = await createClient();
+  await supabase.auth.signOut();
 }
 
 export async function getSession(): Promise<User | null> {
-  const cookieStore = await cookies();
-  const token = cookieStore.get("session")?.value;
-  if (!token) return null;
+  const supabase = await createClient();
+  const { data, error } = await supabase.auth.getUser();
 
-  try {
-    const { payload } = await jwtVerify(token, secret);
-    return {
-      email: payload.email as string,
-      name: payload.name as string,
-      role: payload.role as User["role"],
-    };
-  } catch {
+  if (error || !data.user) {
     return null;
   }
+
+  return {
+    email: data.user.email!,
+    name: data.user.user_metadata?.name || data.user.email!,
+    role: data.user.user_metadata?.role || "member",
+  };
 }
 
 export async function requireSession(): Promise<User> {
@@ -72,18 +58,27 @@ export async function requireSession(): Promise<User> {
   return user;
 }
 
-export async function getSessionFromRequest(request: NextRequest): Promise<User | null> {
-  const token = request.cookies.get("session")?.value;
-  if (!token) return null;
+export async function createDemoAccounts() {
+  const supabase = createAdminClient();
+  const accounts: { email: string; password: string; name: string; role: User["role"] }[] = [
+    { email: "demo@businessalgerie.com", password: "demo123", name: "Utilisateur démo", role: "member" },
+    { email: "admin@businessalgerie.com", password: "admin123", name: "Admin", role: "admin" },
+  ];
 
-  try {
-    const { payload } = await jwtVerify(token, secret);
-    return {
-      email: payload.email as string,
-      name: payload.name as string,
-      role: payload.role as User["role"],
-    };
-  } catch {
-    return null;
+  for (const account of accounts) {
+    const { data: existing } = await supabase.auth.admin.listUsers();
+    const alreadyExists = existing.users.some((u) => u.email === account.email);
+    if (alreadyExists) continue;
+
+    const { error } = await supabase.auth.admin.createUser({
+      email: account.email,
+      password: account.password,
+      email_confirm: true,
+      user_metadata: { name: account.name, role: account.role },
+    });
+
+    if (error) {
+      console.error(`createDemoAccounts error for ${account.email}`, error);
+    }
   }
 }
