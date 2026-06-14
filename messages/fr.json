@@ -1,0 +1,505 @@
+{
+  "brand": {
+    "name": "Business Algerie",
+    "agency": "Agence Algérienne de Marketing Digital",
+    "tagline": "Ne dépendez plus de Facebook pour vendre. Reprenez le contrôle de votre business."
+  },
+  "locales": {
+    "fr": "Français",
+    "ar": "العربية",
+    "en": "English"
+  },
+  "navigation": {
+    "home": "Accueil",
+    "courses": "Formations",
+    "agency": "Agence",
+    "services": "Services",
+    "about": "À propos",
+    "contact": "Contact",
+    "blog": "Blog",
+    "member": "Espace membre"
+  },
+  "hero": {
+    "title": "Ne dépendez plus de Facebook pour vendre.",
+    "subtitle": "Reprenez le contrôle de votre business avec une vraie stratégie digitale.",
+    "cta_primary": "Découvrir les formations",
+    "cta_secondary": "Travailler avec l'agence"
+  },
+  "courses": {
+    "section_title": "Nos formations",
+    "section_subtitle": "Des parcours concrets pour vendre en ligne, même sans gros budget.",
+    "flagship_label": "Formation phare",
+    "currency": "DA",
+    "cta_details": "Voir la formation"
+  },
+  "blog": {
+    "page_title": "Blog",
+    "page_subtitle": "Conseils, stratégies et tutoriels pour vendre en ligne en Algérie.",
+    "read_more": "Lire l'article",
+    "back_to_blog": "Retour au blog",
+    "reading_time_suffix": "min de lecture"
+  },
+  "footer": {
+    "description": "Formations et accompagnement marketing pour entrepreneurs algériens.",
+    "links": "Liens",
+    "legal": "Mentions légales",
+    "privacy": "Confidentialité",
+    "copyright": "© {year} Business Algerie. Tous droits réservés."
+  },
+  "pages": {
+    "formations": {
+      "title": "Nos formations",
+      "intro": "Des parcours concrets pour entrepreneurs algériens : vendre en ligne, créer un site web, générer du trafic et devenir autonome."
+    },
+    "formation_detail": {
+      "title": "Formation",
+      "whatYouLearn": "Ce que vous allez apprendre",
+      "program": "Programme",
+      "register": "S'inscrire à cette formation",
+      "notFound": "Formation introuvable."
+    },
+    "agence": {
+      "title": "Agence Algérienne de Marketing Digital",
+      "intro": "Nous aidons les entreprises algériennes à se développer sur le web avec des stratégies locales, du contenu qui convertit et des outils adaptés au marché algérien.",
+      "servicesTitle": "Nos prestations clés",
+      "services": [
+        {
+          "title": "Stratégie digitale",
+          "desc": "Audit, positionnement, plan d'action et choix des canaux adaptés à votre audience."
+        },
+        {
+          "title": "Publicité en ligne",
+          "desc": "Campagnes Meta Ads et Google Ads optimisées pour le marché algérien."
+        },
+        {
+          "title": "Création de contenu",
+          "desc": "Copywriting, visuels, vidéos et gestion professionnelle des réseaux sociaux."
+        },
+        {
+          "title": "Sites & e-commerce",
+          "desc": "Sites vitrines, boutiques WooCommerce et outils web clé en main."
+        }
+      ],
+      "cta": "Discuter de votre projet"
+    },
+    "services": {
+      "title": "Nos services",
+      "intro": "Un accompagnement complet, du site web aux campagnes publicitaires, pour faire croître votre business en ligne.",
+      "items": [
+        {
+          "title": "Création de sites web",
+          "desc": "Sites vitrines professionnels, boutiques WooCommerce et applications web modernes, pensés pour convertir.",
+          "features": [
+            "Design responsive",
+            "Référencement local",
+            "Hébergement & nom de domaine"
+          ]
+        },
+        {
+          "title": "Publicité en ligne",
+          "desc": "Campagnes Meta, Google et TikTok ciblées pour maximiser votre retour sur investissement.",
+          "features": [
+            "Création d'audiences",
+            "Suivi des conversions",
+            "Optimisation continue"
+          ]
+        },
+        {
+          "title": "Coaching marketing",
+          "desc": "Accompagnement individuel ou collectif pour maîtriser le marketing digital et devenir autonome.",
+          "features": [
+            "Sessions en direct",
+            "Plan d'action personnalisé",
+            "Accès aux ressources"
+          ]
+        },
+        {
+          "title": "Maintenance & support",
+          "desc": "Mise à jour, sécurité, sauvegardes et assistance technique pour votre site et vos outils.",
+          "features": [
+            "Sauvegardes régulières",
+            "Mises à jour sécurité",
+            "Support réactif"
+          ]
+        }
+      ],
+      "cta": "Demander un devis"
+    },
+    "about": {
+      "title": "À propos de Business Algerie",
+      "mission": {
+        "title": "Notre mission",
+        "desc": "Donner aux entrepreneurs algériens les compétences et les outils pour vendre en ligne de manière indépendante et durable."
+      },
+      "story": {
+        "title": "Notre histoire",
+        "desc": "Business Algerie est né du constat que beaucoup de commerces algériens dépendent uniquement des réseaux sociaux. Nous combinons formation et agence pour offrir des solutions complètes et accessibles."
+      },
+      "team": {
+        "title": "L'équipe",
+        "desc": "Une équipe de passionnés du marketing digital, du développement web et du commerce en Algérie, à l'écoute des réalités locales."
+      },
+      "cta": "Nous contacter"
+    },
+    "contact": {
+      "title": "Contactez-nous",
+      "intro": "Racontez-nous votre projet. Nous vous répondrons dans les meilleurs délais.",
+      "form": {
+        "name": "Nom",
+        "email": "Email",
+        "phone": "Téléphone",
+        "message": "Message",
+        "submit": "Envoyer",
+        "success": "Merci pour votre message. Nous vous recontactons rapidement.",
+        "required": "Ce champ est requis"
+      }
+    },
+    "mentionsLegales": {
+      "title": "Mentions légales",
+      "content": "Ce site est édité par Business Algerie, agence de marketing digital en Algérie. Les informations présentes sont fournies à titre indicatif et peuvent être modifiées sans préavis. Tous droits réservés."
+    },
+    "confidentialite": {
+      "title": "Politique de confidentialité",
+      "content": "Nous collectons uniquement les données nécessaires pour répondre à vos demandes. Vos informations ne sont pas partagées avec des tiers et sont conservées de manière sécurisée. Vous pouvez demander la suppression de vos données à tout moment."
+    }
+  },
+  "courseDetails": {
+    "facebook-to-website": {
+      "description": "Passez d'une simple page Facebook à un site web professionnel qui convertit et qui vous appartient vraiment.",
+      "learn": [
+        "Structurer votre offre pour vendre en ligne",
+        "Créer un site web clair et professionnel",
+        "Attirer des clients sans dépendre de Facebook",
+        "Automatiser la prise de contact et les rendez-vous"
+      ],
+      "program": [
+        {
+          "title": "Fondamentaux",
+          "items": [
+            "Pourquoi un site web en Algérie ?",
+            "Positionnement et offre irrésistible"
+          ]
+        },
+        {
+          "title": "Création du site",
+          "items": [
+            "Choix de l'hébergement et du nom de domaine",
+            "Mise en page et contenus essentiels"
+          ]
+        },
+        {
+          "title": "Acquisition",
+          "items": [
+            "SEO local",
+            "Premières campagnes publicitaires"
+          ]
+        },
+        {
+          "title": "Autonomie",
+          "items": [
+            "Outils d'automatisation",
+            "Piloter son business au quotidien"
+          ]
+        }
+      ]
+    },
+    "woocommerce-ecommerce": {
+      "description": "Lancez votre propre boutique en ligne avec WordPress et WooCommerce, de la configuration jusqu'à la première vente.",
+      "learn": [
+        "Installer et configurer WooCommerce",
+        "Gérer les paiements en Algérie",
+        "Rédiger des fiches produits qui vendent",
+        "Promouvoir votre boutique et fidéliser vos clients"
+      ],
+      "program": [
+        {
+          "title": "Installation",
+          "items": [
+            "Hébergement, WordPress et WooCommerce",
+            "Thème, taxes et livraison"
+          ]
+        },
+        {
+          "title": "Catalogue",
+          "items": [
+            "Fiches produits et catégories",
+            "Photos et descriptions optimisées"
+          ]
+        },
+        {
+          "title": "Paiement & commandes",
+          "items": [
+            "Options de paiement locales",
+            "Gestion des commandes et livraisons"
+          ]
+        },
+        {
+          "title": "Lancement",
+          "items": [
+            "Tests et recette",
+            "Première campagne de promotion"
+          ]
+        }
+      ]
+    },
+    "copywriting-algerie": {
+      "description": "Apprenez à rédiger des textes qui accrochent, convainquent et vendent, adaptés au marché algérien.",
+      "learn": [
+        "Comprendre les motivations d'achat locales",
+        "Écrire des accroches efficaces",
+        "Structurer des pages de vente et emails",
+        "Adapter son ton aux réseaux sociaux et au web"
+      ],
+      "program": [
+        {
+          "title": "Bases du copywriting",
+          "items": [
+            "Promesse, preuve et appel à l'action",
+            "Langage client vs langage expert"
+          ]
+        },
+        {
+          "title": "Formats concrets",
+          "items": [
+            "Publications réseaux sociaux",
+            "Pages de vente et emails"
+          ]
+        },
+        {
+          "title": "Optimisation",
+          "items": [
+            "Tests et ajustements",
+            "Créer un calendrier de contenu"
+          ]
+        }
+      ]
+    },
+    "trafic-publicites": {
+      "description": "Devenez autonome pour attirer du trafic qualifié et rentabiliser vos campagnes publicitaires.",
+      "learn": [
+        "Choisir les bons canaux d'acquisition",
+        "Créer des campagnes Meta Ads performantes",
+        "Lire les métriques et optimiser",
+        "Réduire le coût d'acquisition client"
+      ],
+      "program": [
+        {
+          "title": "Stratégie de trafic",
+          "items": [
+            "Organique vs payant",
+            "Tunnel de vente algérien"
+          ]
+        },
+        {
+          "title": "Meta Ads",
+          "items": [
+            "Structure de campagne",
+            "Création d'audiences et publicités"
+          ]
+        },
+        {
+          "title": "Mesure & optimisation",
+          "items": [
+            "Pixels et conversions",
+            "A/B testing et budget"
+          ]
+        }
+      ]
+    }
+  },
+  "common": {
+    "back": "Retour"
+  },
+  "home": {
+    "hero": {
+      "eyebrow": "Business Algerie — Agence de marketing digital",
+      "title": "Ne dépendez plus de Facebook pour vendre.",
+      "subtitle": "Reprenez le contrôle de votre business avec un site web, un e-commerce et une stratégie d'acquisition qui vous appartiennent.",
+      "cta_primary": "Découvrir les formations",
+      "cta_secondary": "Travailler avec l'agence",
+      "video_hint": "Regardez la vidéo explicative"
+    },
+    "problem": {
+      "eyebrow": "Le risque",
+      "title": "Facebook n'est pas un business",
+      "subtitle": "La plupart des entrepreneurs algériens vendent uniquement sur Facebook. Un algorithme, un blocage ou une suspension peuvent faire disparaître vos revenus du jour au lendemain.",
+      "items": [
+        {
+          "title": "Vous ne possédez pas votre audience",
+          "description": "Vos clients restent sur une plateforme que vous ne contrôlez pas. Une fermeture de compte = une perte totale."
+        },
+        {
+          "title": "Vos marges fondent",
+          "description": "La concurrence et les coûts publicitaires montent. Vous dépendez d'un algorithme capricieux pour toucher vos propres abonnés."
+        },
+        {
+          "title": "Vous manquez de crédibilité",
+          "description": "Un site web professionnel rassure, convertit mieux et vous positionne comme une vraie marque."
+        }
+      ]
+    },
+    "solution": {
+      "eyebrow": "La solution",
+      "title": "Construisez des actifs digitaux durables",
+      "subtitle": "Nous vous accompagnons avec des formations concrètes et un service d'agence pour vendre en ligne sans dépendre d'une seule plateforme.",
+      "items": [
+        {
+          "title": "Un site web qui convertit",
+          "description": "Apprenez à créer un site vitrine ou e-commerce qui capte des leads et vend 24h/24."
+        },
+        {
+          "title": "Une acquisition maîtrisée",
+          "description": "Maîtrisez le référencement, les publicités et le copywriting pour attirer vos clients idéaux."
+        },
+        {
+          "title": "Une marque qui dure",
+          "description": "Transformez votre audience Facebook en trafic, emails et revenus récurrents."
+        }
+      ],
+      "cta_primary": "Voir les formations",
+      "cta_secondary": "Demander un accompagnement"
+    },
+    "courses_preview": {
+      "eyebrow": "Formations",
+      "title": "Commencez par la bonne formation",
+      "subtitle": "Trois parcours conçus pour les entrepreneurs algériens qui veulent vendre en ligne de manière autonome.",
+      "cta_all": "Voir toutes les formations"
+    },
+    "testimonials": {
+      "eyebrow": "Témoignages",
+      "title": "Ils ont repris le contrôle de leur business",
+      "items": [
+        {
+          "quote": "J'ai arrêté de stresser à chaque changement d'algorithme. Mon site web me génère des ventes chaque jour.",
+          "author": "Sofiane B.",
+          "role": "E-commerçant à Alger"
+        },
+        {
+          "quote": "La formation WooCommerce m'a permis de lancer ma boutique en 3 semaines, sans coder.",
+          "author": "Karima T.",
+          "role": "Fondatrice d'une marque de mode"
+        },
+        {
+          "quote": "Je comprenais enfin pourquoi mes publicités ne convertissaient pas. Un vrai tournant.",
+          "author": "Amine L.",
+          "role": "Consultant marketing"
+        }
+      ]
+    },
+    "faq": {
+      "eyebrow": "Questions fréquentes",
+      "title": "Vous avez des questions ?",
+      "items": [
+        {
+          "question": "Qui peut suivre ces formations ?",
+          "answer": "Tout entrepreneur, indépendant ou commerçant en Algérie qui veut vendre en ligne. Aucune compétence technique n'est requise pour commencer."
+        },
+        {
+          "question": "Paiement en ligne depuis l'Algérie ?",
+          "answer": "Oui. Nous proposons des moyens de paiement accessibles en dinars algériens (CCP, baridimob, virement bancaire ou carte selon l'offre)."
+        },
+        {
+          "question": "Puis-je travailler directement avec l'agence ?",
+          "answer": "Absolument. Business Algerie propose aussi un accompagnement clé en main : création de site, publicités, copywriting et stratégie."
+        },
+        {
+          "question": "Les formations sont-elles mises à jour ?",
+          "answer": "Oui, nos formations évoluent avec les outils, les algorithmes et les meilleures pratiques du marché algérien."
+        },
+        {
+          "question": "Et si je n'ai pas de site web ?",
+          "answer": "C'est justement le point de départ. Notre formation phare vous guide étape par étape, de Facebook jusqu'à votre propre site."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Prêt à arrêter de dépendre de Facebook ?",
+      "subtitle": "Rejoignez des centaines d'entrepreneurs algériens qui construisent des actifs digitaux rentables.",
+      "cta_primary": "Découvrir les formations",
+      "cta_secondary": "Contacter l'agence"
+    },
+    "newsletter": {
+      "title": "Recevez nos stratégies digitales",
+      "subtitle": "Un email par semaine pour vendre plus en Algérie, sans dépendre d'un seul réseau social.",
+      "placeholder": "Votre adresse email",
+      "button": "S'abonner",
+      "success": "Vous êtes inscrit. À très bientôt dans votre boîte mail.",
+      "error": "Veuillez entrer une adresse email valide."
+    }
+  },
+  "checkout": {
+    "title": "Finaliser votre commande",
+    "subtitle": "Remplissez vos coordonnées pour recevoir les instructions de paiement.",
+    "course": "Formation",
+    "form": {
+      "name": "Nom complet",
+      "name_placeholder": "Votre nom et prénom",
+      "email": "Email",
+      "email_placeholder": "votre@email.com",
+      "phone": "Téléphone",
+      "phone_placeholder": "05 XX XX XX XX",
+      "required": "Ce champ est requis",
+      "email_invalid": "Veuillez entrer une adresse email valide",
+      "submitting": "Envoi en cours...",
+      "submit": "Confirmer ma commande",
+      "success": "Commande enregistrée. Redirection...",
+      "error": "Une erreur est survenue. Veuillez réessayer."
+    }
+  },
+  "merci": {
+    "title": "Merci pour votre commande",
+    "subtitle": "Vous allez recevoir un email récapitulatif. Envoyez-nous votre reçu de paiement pour débloquer votre accès.",
+    "payment_title": "Paiement par CCP",
+    "payment_instructions": "Effectuez le virement au compte ci-dessous, puis envoyez-nous le reçu par WhatsApp ou email.",
+    "ccp_label": "Compte CCP",
+    "ccp_account": "1234 5678 9012 3456",
+    "ccp_name": "Business Algerie — Algerian Marketing Digital Agency",
+    "whatsapp": "Envoyer par WhatsApp",
+    "email": "Envoyer par email"
+  },
+  "member": {
+    "login": {
+      "title": "Espace membre",
+      "subtitle": "Connectez-vous pour accéder à vos formations.",
+      "email": "Email",
+      "email_placeholder": "votre@email.com",
+      "password": "Mot de passe",
+      "password_placeholder": "••••••••",
+      "required": "Ce champ est requis",
+      "submitting": "Connexion...",
+      "submit": "Se connecter",
+      "error": "Email ou mot de passe incorrect.",
+      "no_account": "Pas encore de compte ?",
+      "browse_courses": "Découvrir les formations"
+    },
+    "dashboard": {
+      "title": "Mon espace membre",
+      "welcome": "Bienvenue, {name}",
+      "watch": "Voir la formation",
+      "empty": "Vous n'avez pas encore de formation."
+    },
+    "course": {
+      "back": "Retour au tableau de bord",
+      "subtitle": "Formation en ligne — accès illimité",
+      "modules": "Modules de la formation",
+      "module_intro": "Introduction et fondamentaux",
+      "module_practice": "Mise en pratique étape par étape",
+      "module_advanced": "Stratégies avancées et autonomie"
+    },
+    "logout": "Se déconnecter",
+    "currency": "DA"
+  },
+  "admin": {
+    "title": "Administration",
+    "subtitle": "Validation des commandes et accès aux formations.",
+    "empty": "Aucune commande pour le moment.",
+    "validate": "Valider",
+    "reject": "Refuser",
+    "status": {
+      "pending": "En attente",
+      "paid": "Payé",
+      "validated": "Validée",
+      "rejected": "Refusée"
+    }
+  }
+}

@@ -1,0 +1,505 @@
+{
+  "brand": {
+    "name": "Business Algerie",
+    "agency": "Algerian Digital Marketing Agency",
+    "tagline": "Stop relying on Facebook to sell. Take back control of your business."
+  },
+  "locales": {
+    "fr": "Français",
+    "ar": "العربية",
+    "en": "English"
+  },
+  "navigation": {
+    "home": "Home",
+    "courses": "Courses",
+    "agency": "Agency",
+    "services": "Services",
+    "about": "About",
+    "contact": "Contact",
+    "blog": "Blog",
+    "member": "Member area"
+  },
+  "hero": {
+    "title": "Stop relying on Facebook to sell.",
+    "subtitle": "Take back control of your business with a real digital strategy.",
+    "cta_primary": "Explore courses",
+    "cta_secondary": "Work with the agency"
+  },
+  "courses": {
+    "section_title": "Our courses",
+    "section_subtitle": "Hands-on tracks to sell online, even without a big budget.",
+    "flagship_label": "Flagship course",
+    "currency": "DZD",
+    "cta_details": "View course"
+  },
+  "blog": {
+    "page_title": "Blog",
+    "page_subtitle": "Tips, strategies and tutorials for selling online in Algeria.",
+    "read_more": "Read article",
+    "back_to_blog": "Back to blog",
+    "reading_time_suffix": "min read"
+  },
+  "footer": {
+    "description": "Training and marketing support for Algerian entrepreneurs.",
+    "links": "Links",
+    "legal": "Legal notice",
+    "privacy": "Privacy",
+    "copyright": "© {year} Business Algerie. All rights reserved."
+  },
+  "pages": {
+    "formations": {
+      "title": "Our courses",
+      "intro": "Hands-on tracks for Algerian entrepreneurs: sell online, build a website, drive traffic, and become independent."
+    },
+    "formation_detail": {
+      "title": "Course",
+      "whatYouLearn": "What you will learn",
+      "program": "Program",
+      "register": "Register for this course",
+      "notFound": "Course not found."
+    },
+    "agence": {
+      "title": "Algerian Digital Marketing Agency",
+      "intro": "We help Algerian businesses grow online with local strategies, converting content, and tools tailored to the Algerian market.",
+      "servicesTitle": "Key services",
+      "services": [
+        {
+          "title": "Digital strategy",
+          "desc": "Audit, positioning, action plan and channel selection adapted to your audience."
+        },
+        {
+          "title": "Online advertising",
+          "desc": "Meta Ads and Google Ads campaigns optimized for the Algerian market."
+        },
+        {
+          "title": "Content creation",
+          "desc": "Copywriting, visuals, videos and professional social media management."
+        },
+        {
+          "title": "Websites & e-commerce",
+          "desc": "Showcase sites, WooCommerce stores and ready-to-use web tools."
+        }
+      ],
+      "cta": "Discuss your project"
+    },
+    "services": {
+      "title": "Our services",
+      "intro": "End-to-end support, from website creation to ad campaigns, to grow your business online.",
+      "items": [
+        {
+          "title": "Website creation",
+          "desc": "Professional showcase sites, WooCommerce stores and modern web applications built to convert.",
+          "features": [
+            "Responsive design",
+            "Local SEO",
+            "Hosting & domain"
+          ]
+        },
+        {
+          "title": "Online advertising",
+          "desc": "Targeted Meta, Google and TikTok campaigns designed to maximize your return on investment.",
+          "features": [
+            "Audience creation",
+            "Conversion tracking",
+            "Continuous optimization"
+          ]
+        },
+        {
+          "title": "Marketing coaching",
+          "desc": "One-on-one or group coaching to master digital marketing and become self-sufficient.",
+          "features": [
+            "Live sessions",
+            "Custom action plan",
+            "Resource access"
+          ]
+        },
+        {
+          "title": "Maintenance & support",
+          "desc": "Updates, security, backups and technical support for your website and tools.",
+          "features": [
+            "Regular backups",
+            "Security updates",
+            "Responsive support"
+          ]
+        }
+      ],
+      "cta": "Request a quote"
+    },
+    "about": {
+      "title": "About Business Algerie",
+      "mission": {
+        "title": "Our mission",
+        "desc": "Give Algerian entrepreneurs the skills and tools to sell online independently and sustainably."
+      },
+      "story": {
+        "title": "Our story",
+        "desc": "Business Algerie was created after noticing that many Algerian businesses rely only on social media. We combine training and agency services to provide complete, accessible solutions."
+      },
+      "team": {
+        "title": "The team",
+        "desc": "A team of digital marketing, web development and commerce specialists in Algeria, attentive to local realities."
+      },
+      "cta": "Contact us"
+    },
+    "contact": {
+      "title": "Contact us",
+      "intro": "Tell us about your project. We will get back to you as soon as possible.",
+      "form": {
+        "name": "Name",
+        "email": "Email",
+        "phone": "Phone",
+        "message": "Message",
+        "submit": "Send",
+        "success": "Thank you for your message. We will get back to you shortly.",
+        "required": "This field is required"
+      }
+    },
+    "mentionsLegales": {
+      "title": "Legal notice",
+      "content": "This website is published by Business Algerie, a digital marketing agency in Algeria. The information provided is for informational purposes only and may be changed without notice. All rights reserved."
+    },
+    "confidentialite": {
+      "title": "Privacy policy",
+      "content": "We only collect the data necessary to respond to your requests. Your information is not shared with third parties and is kept securely. You may request deletion of your data at any time."
+    }
+  },
+  "courseDetails": {
+    "facebook-to-website": {
+      "description": "Move from a simple Facebook page to a professional website that converts and truly belongs to you.",
+      "learn": [
+        "Structure your offer for online sales",
+        "Create a clear, professional website",
+        "Attract customers without depending on Facebook",
+        "Automate contact requests and appointments"
+      ],
+      "program": [
+        {
+          "title": "Fundamentals",
+          "items": [
+            "Why a website in Algeria?",
+            "Positioning and irresistible offer"
+          ]
+        },
+        {
+          "title": "Website creation",
+          "items": [
+            "Hosting and domain name",
+            "Layout and essential content"
+          ]
+        },
+        {
+          "title": "Acquisition",
+          "items": [
+            "Local SEO",
+            "First ad campaigns"
+          ]
+        },
+        {
+          "title": "Independence",
+          "items": [
+            "Automation tools",
+            "Running your business day-to-day"
+          ]
+        }
+      ]
+    },
+    "woocommerce-ecommerce": {
+      "description": "Launch your own online store with WordPress and WooCommerce, from setup to the first sale.",
+      "learn": [
+        "Install and configure WooCommerce",
+        "Handle payments in Algeria",
+        "Write product pages that sell",
+        "Promote your store and retain customers"
+      ],
+      "program": [
+        {
+          "title": "Setup",
+          "items": [
+            "Hosting, WordPress and WooCommerce",
+            "Theme, taxes and shipping"
+          ]
+        },
+        {
+          "title": "Catalog",
+          "items": [
+            "Product pages and categories",
+            "Photos and optimized descriptions"
+          ]
+        },
+        {
+          "title": "Payment & orders",
+          "items": [
+            "Local payment options",
+            "Order and delivery management"
+          ]
+        },
+        {
+          "title": "Launch",
+          "items": [
+            "Testing and review",
+            "First promotion campaign"
+          ]
+        }
+      ]
+    },
+    "copywriting-algerie": {
+      "description": "Learn to write copy that grabs attention, builds trust and sells, tailored to the Algerian market.",
+      "learn": [
+        "Understand local buying motivations",
+        "Write hooks that work",
+        "Structure sales pages and emails",
+        "Adapt your tone for social media and the web"
+      ],
+      "program": [
+        {
+          "title": "Copywriting basics",
+          "items": [
+            "Promise, proof and call to action",
+            "Customer language vs expert language"
+          ]
+        },
+        {
+          "title": "Practical formats",
+          "items": [
+            "Social media posts",
+            "Sales pages and emails"
+          ]
+        },
+        {
+          "title": "Optimization",
+          "items": [
+            "Testing and iteration",
+            "Build a content calendar"
+          ]
+        }
+      ]
+    },
+    "trafic-publicites": {
+      "description": "Become independent at driving qualified traffic and making your ad campaigns profitable.",
+      "learn": [
+        "Choose the right acquisition channels",
+        "Build high-performing Meta Ads campaigns",
+        "Read metrics and optimize",
+        "Reduce customer acquisition cost"
+      ],
+      "program": [
+        {
+          "title": "Traffic strategy",
+          "items": [
+            "Organic vs paid",
+            "Algerian sales funnel"
+          ]
+        },
+        {
+          "title": "Meta Ads",
+          "items": [
+            "Campaign structure",
+            "Audience creation and creatives"
+          ]
+        },
+        {
+          "title": "Measurement & optimization",
+          "items": [
+            "Pixels and conversions",
+            "A/B testing and budgeting"
+          ]
+        }
+      ]
+    }
+  },
+  "common": {
+    "back": "Back"
+  },
+  "home": {
+    "hero": {
+      "eyebrow": "Business Algerie — Digital marketing agency",
+      "title": "Stop relying on Facebook to sell.",
+      "subtitle": "Take back control of your business with a website, e-commerce store and acquisition strategy that truly belong to you.",
+      "cta_primary": "Explore courses",
+      "cta_secondary": "Work with the agency",
+      "video_hint": "Watch the explainer video"
+    },
+    "problem": {
+      "eyebrow": "The risk",
+      "title": "Facebook is not a business",
+      "subtitle": "Most Algerian entrepreneurs sell only on Facebook. One algorithm change, block or suspension can wipe out your overnight.",
+      "items": [
+        {
+          "title": "You do not own your audience",
+          "description": "Your customers stay on a platform you do not control. Account closure means total loss."
+        },
+        {
+          "title": "Your margins are melting",
+          "description": "Competition and ad costs are rising. You rely on a capricious algorithm to reach your own followers."
+        },
+        {
+          "title": "You lack credibility",
+          "description": "A professional website reassures, converts better and positions you as a real brand."
+        }
+      ]
+    },
+    "solution": {
+      "eyebrow": "The solution",
+      "title": "Build durable digital assets",
+      "subtitle": "We support you with practical training and agency services to sell online without depending on a single platform.",
+      "items": [
+        {
+          "title": "A website that converts",
+          "description": "Learn to create a showcase or e-commerce site that captures leads and sells 24/7."
+        },
+        {
+          "title": "Controlled acquisition",
+          "description": "Master SEO, ads and copywriting to attract your ideal customers."
+        },
+        {
+          "title": "A brand that lasts",
+          "description": "Turn your Facebook audience into traffic, emails and recurring revenue."
+        }
+      ],
+      "cta_primary": "View the courses",
+      "cta_secondary": "Request support"
+    },
+    "courses_preview": {
+      "eyebrow": "Courses",
+      "title": "Start with the right course",
+      "subtitle": "Three tracks designed for Algerian entrepreneurs who want to sell online independently.",
+      "cta_all": "See all courses"
+    },
+    "testimonials": {
+      "eyebrow": "Testimonials",
+      "title": "They took back control of their business",
+      "items": [
+        {
+          "quote": "I stopped stressing over every algorithm change. My website generates sales every day.",
+          "author": "Sofiane B.",
+          "role": "E-commerce seller in Algiers"
+        },
+        {
+          "quote": "The WooCommerce course helped me launch my store in 3 weeks, without coding.",
+          "author": "Karima T.",
+          "role": "Fashion brand founder"
+        },
+        {
+          "quote": "I finally understood why my ads were not converting. A real turning point.",
+          "author": "Amine L.",
+          "role": "Marketing consultant"
+        }
+      ]
+    },
+    "faq": {
+      "eyebrow": "Frequently asked questions",
+      "title": "Have questions?",
+      "items": [
+        {
+          "question": "Who can follow these courses?",
+          "answer": "Any entrepreneur, freelancer or merchant in Algeria who wants to sell online. No technical skills are required to start."
+        },
+        {
+          "question": "Can I pay online from Algeria?",
+          "answer": "Yes. We offer payment methods available in Algerian dinars (CCP, Baridimob, bank transfer or card depending on the offer)."
+        },
+        {
+          "question": "Can I work directly with the agency?",
+          "answer": "Absolutely. Business Algerie also offers turnkey support: website creation, ads, copywriting and strategy."
+        },
+        {
+          "question": "Are the courses kept up to date?",
+          "answer": "Yes, our courses evolve with the tools, algorithms and best practices of the Algerian market."
+        },
+        {
+          "question": "What if I do not have a website?",
+          "answer": "That is exactly the starting point. Our flagship course guides you step by step, from Facebook to your own site."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Ready to stop depending on Facebook?",
+      "subtitle": "Join hundreds of Algerian entrepreneurs building profitable digital assets.",
+      "cta_primary": "Explore courses",
+      "cta_secondary": "Contact the agency"
+    },
+    "newsletter": {
+      "title": "Get our digital strategies",
+      "subtitle": "One email per week to sell more in Algeria, without relying on a single social network.",
+      "placeholder": "Your email address",
+      "button": "Subscribe",
+      "success": "You are subscribed. See you soon in your inbox.",
+      "error": "Please enter a valid email address."
+    }
+  },
+  "checkout": {
+    "title": "Complete your order",
+    "subtitle": "Fill in your details to receive payment instructions.",
+    "course": "Course",
+    "form": {
+      "name": "Full name",
+      "name_placeholder": "Your first and last name",
+      "email": "Email",
+      "email_placeholder": "your@email.com",
+      "phone": "Phone",
+      "phone_placeholder": "05 XX XX XX XX",
+      "required": "This field is required",
+      "email_invalid": "Please enter a valid email address",
+      "submitting": "Sending...",
+      "submit": "Confirm my order",
+      "success": "Order recorded. Redirecting...",
+      "error": "An error occurred. Please try again."
+    }
+  },
+  "merci": {
+    "title": "Thank you for your order",
+    "subtitle": "You will receive a summary email. Send us your payment receipt to unlock your access.",
+    "payment_title": "Payment by CCP",
+    "payment_instructions": "Make the transfer to the account below, then send us the receipt by WhatsApp or email.",
+    "ccp_label": "CCP account",
+    "ccp_account": "1234 5678 9012 3456",
+    "ccp_name": "Business Algerie — Algerian Digital Marketing Agency",
+    "whatsapp": "Send by WhatsApp",
+    "email": "Send by email"
+  },
+  "member": {
+    "login": {
+      "title": "Member area",
+      "subtitle": "Log in to access your courses.",
+      "email": "Email",
+      "email_placeholder": "your@email.com",
+      "password": "Password",
+      "password_placeholder": "••••••••",
+      "required": "This field is required",
+      "submitting": "Logging in...",
+      "submit": "Log in",
+      "error": "Invalid email or password.",
+      "no_account": "No account yet?",
+      "browse_courses": "Browse courses"
+    },
+    "dashboard": {
+      "title": "My member area",
+      "welcome": "Welcome, {name}",
+      "watch": "Watch course",
+      "empty": "You do not have any course yet."
+    },
+    "course": {
+      "back": "Back to dashboard",
+      "subtitle": "Online course — unlimited access",
+      "modules": "Course modules",
+      "module_intro": "Introduction and fundamentals",
+      "module_practice": "Step-by-step practice",
+      "module_advanced": "Advanced strategies and independence"
+    },
+    "logout": "Log out",
+    "currency": "DZD"
+  },
+  "admin": {
+    "title": "Admin",
+    "subtitle": "Order validation and course access management.",
+    "empty": "No orders yet.",
+    "validate": "Validate",
+    "reject": "Reject",
+    "status": {
+      "pending": "Pending",
+      "paid": "Paid",
+      "validated": "Validated",
+      "rejected": "Rejected"
+    }
+  }
+}
