@@ -44,3 +44,5 @@ next-env.d.ts
 dev.log
 dev.pid
 cookies.txt
+
+.env.local
