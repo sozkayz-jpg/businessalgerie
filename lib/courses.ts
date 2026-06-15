@@ -16,7 +16,7 @@ export const COURSES: Course[] = [
     },
     priceDZD: 24900,
     isFlagship: true,
-    image: "/images/facebook-to-website.svg",
+    image: "/images/facebook-to-website.webp",
   },
   {
     slug: "woocommerce-ecommerce",
@@ -26,7 +26,7 @@ export const COURSES: Course[] = [
       en: "Build an E-commerce Site with WordPress/WooCommerce",
     },
     priceDZD: 19900,
-    image: "/images/woocommerce-ecommerce.svg",
+    image: "/images/woocommerce-ecommerce.webp",
   },
   {
     slug: "copywriting-algerie",
@@ -36,7 +36,7 @@ export const COURSES: Course[] = [
       en: "Copywriting & Content That Sells",
     },
     priceDZD: 14900,
-    image: "/images/copywriting-algerie.svg",
+    image: "/images/copywriting-algerie.webp",
   },
   {
     slug: "trafic-publicites",
@@ -46,7 +46,7 @@ export const COURSES: Course[] = [
       en: "Traffic & Ads: Become Independent in Acquisition",
     },
     priceDZD: 14900,
-    image: "/images/trafic-publicites.svg",
+    image: "/images/trafic-publicites.webp",
   },
 ];
 

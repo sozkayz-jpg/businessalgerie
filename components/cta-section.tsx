@@ -33,7 +33,7 @@ export async function CTASection() {
               href="/contact"
               className={cn(
                 buttonVariants({ size: "lg", variant: "outline" }),
-                "border-white text-white hover:bg-white/10 hover:text-white"
+                "border-white bg-transparent text-white hover:bg-white/10 hover:text-white"
               )}
             >
               {t("cta_secondary")}

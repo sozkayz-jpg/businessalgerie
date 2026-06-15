@@ -30,7 +30,7 @@ export const BLOG_POSTS: BlogPost[] = [
     },
     readingTime: 5,
     videoId: "dQw4w9WgXcQ",
-    image: "/images/blog-risque-facebook.svg",
+    image: "/images/blog-risque-facebook.webp",
   },
   {
     slug: "independance-digitale",
@@ -52,7 +52,7 @@ export const BLOG_POSTS: BlogPost[] = [
     },
     readingTime: 6,
     videoId: "dQw4w9WgXcQ",
-    image: "/images/blog-independance-digitale.svg",
+    image: "/images/blog-independance-digitale.webp",
   },
   {
     slug: "premier-site-web",
@@ -74,7 +74,7 @@ export const BLOG_POSTS: BlogPost[] = [
     },
     readingTime: 7,
     videoId: "dQw4w9WgXcQ",
-    image: "/images/blog-premier-site-web.svg",
+    image: "/images/blog-premier-site-web.webp",
   },
   {
     slug: "e-commerce-algerie",
@@ -96,7 +96,7 @@ export const BLOG_POSTS: BlogPost[] = [
     },
     readingTime: 6,
     videoId: "dQw4w9WgXcQ",
-    image: "/images/blog-e-commerce-algerie.svg",
+    image: "/images/blog-e-commerce-algerie.webp",
   },
 ];
 

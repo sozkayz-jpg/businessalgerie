@@ -37,7 +37,7 @@ export async function HeroSection() {
                 href="/contact"
                 className={cn(
                   buttonVariants({ size: "lg", variant: "outline" }),
-                  "border-white text-white hover:bg-white/10 hover:text-white"
+                  "border-white bg-transparent text-white hover:bg-white/10 hover:text-white"
                 )}
               >
                 {t("cta_secondary")}
@@ -51,7 +51,7 @@ export async function HeroSection() {
 
           <div className="relative mx-auto aspect-[4/3] w-full max-w-lg overflow-hidden rounded-2xl shadow-2xl lg:max-w-none">
             <Image
-              src="/images/hero.svg"
+              src="/images/hero.webp"
               alt="Business Algerie digital illustration"
               fill
               className="object-cover"
