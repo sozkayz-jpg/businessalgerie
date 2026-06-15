@@ -36,8 +36,8 @@ export async function HeroSection() {
               <Link
                 href="/contact"
                 className={cn(
-                  buttonVariants({ size: "lg", variant: "outline" }),
-                  "border-white bg-transparent text-white hover:bg-white/10 hover:text-white"
+                  buttonVariants({ size: "lg" }),
+                  "border-2 border-white/80 bg-white/10 text-white shadow-sm backdrop-blur-sm hover:border-white hover:bg-white/20 hover:text-white"
                 )}
               >
                 {t("cta_secondary")}

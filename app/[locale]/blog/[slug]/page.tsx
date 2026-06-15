@@ -11,6 +11,9 @@ import { getBlogPostBySlug, getAllBlogPosts, type BlogPost } from "@/lib/blog";
 import { routing, type Locale } from "@/i18n/routing";
 import { ArrowLeft, Calendar, Clock } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { SchemaOrg } from "@/components/schema-org";
+import { buildBlogPostingSchema, buildBreadcrumbSchema } from "@/lib/schema-org";
+import { buildPublicUrl } from "@/lib/env";
 
 type ArticleSection = {
   heading: Record<Locale, string>;
@@ -427,7 +430,29 @@ export default async function BlogArticlePage({
   );
 
   return (
-    <article className="bg-brand-soft py-16 md:py-24">
+    <>
+      <SchemaOrg
+        data={[
+          buildBlogPostingSchema({
+            title,
+            excerpt: post.excerpt[typedLocale] ?? post.excerpt.en,
+            slug,
+            image: post.image,
+            date: post.date,
+            author: post.author || "Business Algerie",
+            locale: typedLocale,
+            category,
+          }),
+          buildBreadcrumbSchema([
+            { name: "Blog", item: buildPublicUrl(typedLocale, "/blog") },
+            {
+              name: title,
+              item: buildPublicUrl(typedLocale, `/blog/${slug}`),
+            },
+          ]),
+        ]}
+      />
+      <article className="bg-brand-soft py-16 md:py-24">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl">
           <Link
@@ -523,5 +548,6 @@ export default async function BlogArticlePage({
         </div>
       </div>
     </article>
+    </>
   );
 }

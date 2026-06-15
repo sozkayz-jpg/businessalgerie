@@ -9,10 +9,7 @@ import { YouTubeEmbed } from "@/components/youtube-embed";
 import { cn } from "@/lib/utils";
 import { ArrowLeft } from "lucide-react";
 
-export async function generateStaticParams() {
-  const courses = await getAllCourses();
-  return courses.map((course) => ({ slug: course.slug }));
-}
+export const dynamic = "force-dynamic";
 
 export default async function MemberCoursePage({
   params,

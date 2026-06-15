@@ -15,7 +15,7 @@ export type Course = {
   image?: string;
 };
 
-const STATIC_COURSES: Course[] = [
+export const STATIC_COURSES: Course[] = [
   {
     slug: "facebook-to-website",
     title: {

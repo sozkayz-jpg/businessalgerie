@@ -22,6 +22,31 @@ export type AnalyticsConfig = {
   searchConsoleHtmlTag?: string;
 };
 
+export type LocalBusinessConfig = {
+  name: string;
+  description: string;
+  url: string;
+  telephone: string;
+  email: string;
+  address: {
+    streetAddress: string;
+    addressLocality: string;
+    addressRegion: string;
+    postalCode: string;
+    addressCountry: string;
+  };
+  geo: {
+    latitude: number;
+    longitude: number;
+  };
+  openingHours: string[];
+  image: string;
+  sameAs: string[];
+  priceRange: string;
+  areaServed: string;
+  hasMap: string;
+};
+
 export type SiteColors = {
   primary: string;
   accent: string;
@@ -37,6 +62,8 @@ export type SiteSettings = {
   tagline: Localized<string>;
   logo_url: string | null;
   favicon_url: string | null;
+  logo_width: number;
+  logo_height: number;
   colors: SiteColors;
   fonts: { heading: string; body: string };
   seo_default: {
@@ -48,6 +75,7 @@ export type SiteSettings = {
   social_links: SocialLinks;
   pixels: PixelIds;
   analytics: AnalyticsConfig;
+  local_business: LocalBusinessConfig;
   updated_at: string;
 };
 
@@ -91,6 +119,7 @@ export type BlockType =
 export type Block = {
   id: string;
   type: BlockType;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   props: Record<string, any>;
 };
 
@@ -156,6 +185,22 @@ export type MediaItem = {
   created_at: string;
 };
 
+export type MediaFile = MediaItem;
+
+export type OrderStatus = "pending" | "paid" | "validated" | "rejected";
+
+export type Order = {
+  id: string;
+  course_slug: string;
+  course_title: string;
+  email: string;
+  name: string;
+  phone?: string;
+  status: OrderStatus;
+  amount: number;
+  created_at: string;
+};
+
 export type PageView = {
   id: string;
   path: string;
@@ -173,6 +218,7 @@ export type AnalyticsEvent = {
   id: string;
   type: string;
   path: string | null;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   payload: Record<string, any>;
   session_id: string | null;
   created_at: string;

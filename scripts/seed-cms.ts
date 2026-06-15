@@ -80,6 +80,32 @@ async function seedSiteSettings() {
       },
       pixels: { facebook: null, tiktok: null, linkedin: null },
       analytics: { ga4MeasurementId: null, searchConsoleHtmlTag: null },
+      local_business: {
+        name: "Business Algerie",
+        description: "Agence de marketing digital et formations pour entrepreneurs algériens.",
+        url: "https://businessalgerie.vercel.app",
+        telephone: "+213",
+        email: "contact@businessalgerie.com",
+        address: {
+          streetAddress: "",
+          addressLocality: "Alger",
+          addressRegion: "Alger",
+          postalCode: "16000",
+          addressCountry: "DZ",
+        },
+        geo: { latitude: 36.7538, longitude: 3.0588 },
+        openingHours: ["Mo-Fr 09:00-17:00"],
+        image: "/images/hero.webp",
+        sameAs: [
+          "https://facebook.com/businessalgerie",
+          "https://instagram.com/businessalgerie",
+          "https://linkedin.com/company/businessalgerie",
+          "https://youtube.com/@businessalgerie",
+        ],
+        priceRange: "$$",
+        areaServed: "Algérie",
+        hasMap: "https://www.google.com/maps/search/?api=1&query=Alger,+Algérie",
+      },
     },
     { onConflict: "id" }
   );

@@ -27,6 +27,7 @@ import {
 import { useTranslations } from "next-intl";
 import { cn } from "@/lib/utils";
 import type { Localized } from "@/lib/cms/types";
+import { buildAdminUrl } from "@/lib/env";
 
 const navKeys = [
   "home",
@@ -51,11 +52,15 @@ export function Header({
   dir,
   brandName,
   logoUrl,
+  logoWidth = 32,
+  logoHeight = 32,
 }: {
   locale: Locale;
   dir: "ltr" | "rtl";
   brandName: Localized<string>;
   logoUrl: string | null;
+  logoWidth?: number;
+  logoHeight?: number;
 }) {
   const t = useTranslations();
   const router = useRouter();
@@ -76,7 +81,14 @@ export function Header({
           className="flex items-center gap-2 font-heading text-lg font-bold text-primary"
         >
           {logoUrl && (
-            <Image src={logoUrl} alt={brandName[locale]} width={32} height={32} className="size-8 object-contain" />
+            <Image
+              src={logoUrl}
+              alt={brandName[locale]}
+              width={logoWidth}
+              height={logoHeight}
+              className="object-contain"
+              style={{ width: logoWidth, height: logoHeight, maxHeight: 64 }}
+            />
           )}
           <span>{brandName[locale]}</span>
         </Link>
@@ -116,15 +128,15 @@ export function Header({
             </DropdownMenuContent>
           </DropdownMenu>
 
-          <Link
-            href="/member"
+          <a
+            href={buildAdminUrl(locale, "/member")}
             className={cn(
               buttonVariants({ size: "sm" }),
               "hidden md:inline-flex"
             )}
           >
             {t("navigation.member")}
-          </Link>
+          </a>
 
           <Sheet open={open} onOpenChange={setOpen}>
             <SheetTrigger
@@ -150,13 +162,13 @@ export function Header({
                     {t(`navigation.${key}`)}
                   </Link>
                 ))}
-                <Link
-                  href="/member"
+                <a
+                  href={buildAdminUrl(locale, "/member")}
                   onClick={() => setOpen(false)}
                   className="rounded-md px-3 py-2 text-sm font-medium text-brand-text transition-colors hover:bg-muted hover:text-primary"
                 >
                   {t("navigation.member")}
-                </Link>
+                </a>
               </nav>
             </SheetContent>
           </Sheet>

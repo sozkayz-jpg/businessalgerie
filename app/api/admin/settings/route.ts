@@ -1,4 +1,5 @@
 import { NextRequest } from "next/server";
+import { revalidatePath } from "next/cache";
 import { requireAdmin } from "@/lib/admin-auth";
 import { createAdminClient } from "@/lib/supabase/admin";
 
@@ -36,14 +37,16 @@ export async function POST(request: NextRequest) {
   const supabase = createAdminClient();
   const { data, error } = await supabase
     .from("site_settings")
-    .update(body)
-    .eq("id", "default")
+    .upsert({ id: "default", ...body }, { onConflict: "id" })
     .select()
     .single();
 
   if (error || !data) {
-    return Response.json({ ok: false, error: error?.message || "update_failed" }, { status: 500 });
+    return Response.json({ ok: false, error: error?.message || "upsert_failed" }, { status: 500 });
   }
+
+  revalidatePath("/");
+  revalidatePath("/[locale]");
 
   return Response.json({ ok: true, settings: data });
 }

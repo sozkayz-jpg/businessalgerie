@@ -9,6 +9,8 @@ import { cn } from "@/lib/utils";
 import { LogoutButton } from "@/components/logout-button";
 import { PlayCircle } from "lucide-react";
 
+export const dynamic = "force-dynamic";
+
 export default async function MemberDashboardPage({
   params,
 }: {

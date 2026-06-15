@@ -47,6 +47,24 @@ export function SiteSettingsForm({ settings }: { settings: SiteSettings }) {
     setForm((prev) => ({ ...prev, social_links: { ...prev.social_links, [key]: value || undefined } }));
   };
 
+  const updateLocalBusiness = (key: keyof SiteSettings["local_business"], value: any) => {
+    setForm((prev) => ({ ...prev, local_business: { ...prev.local_business, [key]: value } }));
+  };
+
+  const updateLocalAddress = (key: keyof SiteSettings["local_business"]["address"], value: string) => {
+    setForm((prev) => ({
+      ...prev,
+      local_business: { ...prev.local_business, address: { ...prev.local_business.address, [key]: value } },
+    }));
+  };
+
+  const updateLocalGeo = (key: keyof SiteSettings["local_business"]["geo"], value: string) => {
+    setForm((prev) => ({
+      ...prev,
+      local_business: { ...prev.local_business, geo: { ...prev.local_business.geo, [key]: parseFloat(value) || 0 } },
+    }));
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus("loading");
@@ -75,6 +93,7 @@ export function SiteSettingsForm({ settings }: { settings: SiteSettings }) {
           <TabsTrigger value="brand">{t("tabs.brand")}</TabsTrigger>
           <TabsTrigger value="design">{t("tabs.design")}</TabsTrigger>
           <TabsTrigger value="seo">{t("tabs.seo")}</TabsTrigger>
+          <TabsTrigger value="local">{t("tabs.local")}</TabsTrigger>
           <TabsTrigger value="integrations">{t("tabs.integrations")}</TabsTrigger>
         </TabsList>
 
@@ -135,6 +154,24 @@ export function SiteSettingsForm({ settings }: { settings: SiteSettings }) {
                   </span>
                 </Label>
               </div>
+            </div>
+          </div>
+          <div className="grid gap-4 md:grid-cols-2">
+            <div className="space-y-2">
+              <Label>{t("logoWidth")}</Label>
+              <Input
+                type="number"
+                value={form.logo_width}
+                onChange={(e) => setForm((prev) => ({ ...prev, logo_width: parseInt(e.target.value) || 32 }))}
+              />
+            </div>
+            <div className="space-y-2">
+              <Label>{t("logoHeight")}</Label>
+              <Input
+                type="number"
+                value={form.logo_height}
+                onChange={(e) => setForm((prev) => ({ ...prev, logo_height: parseInt(e.target.value) || 32 }))}
+              />
             </div>
           </div>
           <div className="grid gap-4 md:grid-cols-2">
@@ -230,6 +267,66 @@ export function SiteSettingsForm({ settings }: { settings: SiteSettings }) {
                 }))
               }
             />
+          </div>
+        </TabsContent>
+
+        <TabsContent value="local" className="space-y-4">
+          <div className="grid gap-4 md:grid-cols-2">
+            <div className="space-y-2">
+              <Label>{t("localBusinessName")}</Label>
+              <Input value={form.local_business.name} onChange={(e) => updateLocalBusiness("name", e.target.value)} />
+            </div>
+            <div className="space-y-2">
+              <Label>{t("localBusinessPhone")}</Label>
+              <Input value={form.local_business.telephone} onChange={(e) => updateLocalBusiness("telephone", e.target.value)} />
+            </div>
+            <div className="space-y-2">
+              <Label>{t("localBusinessEmail")}</Label>
+              <Input value={form.local_business.email} onChange={(e) => updateLocalBusiness("email", e.target.value)} />
+            </div>
+            <div className="space-y-2">
+              <Label>{t("localBusinessUrl")}</Label>
+              <Input value={form.local_business.url} onChange={(e) => updateLocalBusiness("url", e.target.value)} />
+            </div>
+            <div className="space-y-2">
+              <Label>{t("localBusinessCity")}</Label>
+              <Input value={form.local_business.address.addressLocality} onChange={(e) => updateLocalAddress("addressLocality", e.target.value)} />
+            </div>
+            <div className="space-y-2">
+              <Label>{t("localBusinessRegion")}</Label>
+              <Input value={form.local_business.address.addressRegion} onChange={(e) => updateLocalAddress("addressRegion", e.target.value)} />
+            </div>
+            <div className="space-y-2">
+              <Label>{t("localBusinessZip")}</Label>
+              <Input value={form.local_business.address.postalCode} onChange={(e) => updateLocalAddress("postalCode", e.target.value)} />
+            </div>
+            <div className="space-y-2">
+              <Label>{t("localBusinessCountry")}</Label>
+              <Input value={form.local_business.address.addressCountry} onChange={(e) => updateLocalAddress("addressCountry", e.target.value)} />
+            </div>
+            <div className="space-y-2">
+              <Label>{t("localBusinessStreet")}</Label>
+              <Input value={form.local_business.address.streetAddress} onChange={(e) => updateLocalAddress("streetAddress", e.target.value)} />
+            </div>
+            <div className="space-y-2">
+              <Label>{t("localBusinessLatitude")}</Label>
+              <Input value={form.local_business.geo.latitude} onChange={(e) => updateLocalGeo("latitude", e.target.value)} />
+            </div>
+            <div className="space-y-2">
+              <Label>{t("localBusinessLongitude")}</Label>
+              <Input value={form.local_business.geo.longitude} onChange={(e) => updateLocalGeo("longitude", e.target.value)} />
+            </div>
+            <div className="space-y-2">
+              <Label>{t("localBusinessMap")}</Label>
+              <Input value={form.local_business.hasMap} onChange={(e) => updateLocalBusiness("hasMap", e.target.value)} />
+            </div>
+            <div className="space-y-2">
+              <Label>{t("localBusinessHours")}</Label>
+              <Input
+                value={form.local_business.openingHours.join(", ")}
+                onChange={(e) => updateLocalBusiness("openingHours", e.target.value.split(",").map((k) => k.trim()).filter(Boolean))}
+              />
+            </div>
           </div>
         </TabsContent>
 

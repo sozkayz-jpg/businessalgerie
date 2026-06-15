@@ -11,6 +11,8 @@ const DEFAULT_SETTINGS: SiteSettings = {
   },
   logo_url: null,
   favicon_url: null,
+  logo_width: 32,
+  logo_height: 32,
   colors: {
     primary: "#0f172a",
     accent: "#f97316",
@@ -34,6 +36,32 @@ const DEFAULT_SETTINGS: SiteSettings = {
   },
   pixels: { facebook: undefined, tiktok: undefined, linkedin: undefined },
   analytics: { ga4MeasurementId: undefined, searchConsoleHtmlTag: undefined },
+  local_business: {
+    name: "Business Algerie",
+    description: "Agence de marketing digital et formations pour entrepreneurs algériens.",
+    url: "https://businessalgerie.com",
+    telephone: "+213",
+    email: "contact@businessalgerie.com",
+    address: {
+      streetAddress: "",
+      addressLocality: "Alger",
+      addressRegion: "Alger",
+      postalCode: "16000",
+      addressCountry: "DZ",
+    },
+    geo: { latitude: 36.7538, longitude: 3.0588 },
+    openingHours: ["Mo-Fr 09:00-17:00"],
+    image: "/images/hero.webp",
+    sameAs: [
+      "https://facebook.com/businessalgerie",
+      "https://instagram.com/businessalgerie",
+      "https://linkedin.com/company/businessalgerie",
+      "https://youtube.com/@businessalgerie",
+    ],
+    priceRange: "$$",
+    areaServed: "Algérie",
+    hasMap: "https://www.google.com/maps/search/?api=1&query=Alger,+Algérie",
+  },
   updated_at: new Date().toISOString(),
 };
 

@@ -58,6 +58,18 @@ export async function requireSession(): Promise<User> {
   return user;
 }
 
+export async function getAdminUser(): Promise<User | null> {
+  const user = await getSession();
+  if (!user || user.role !== "admin") return null;
+  return user;
+}
+
+export async function requireAdmin(): Promise<User> {
+  const user = await getAdminUser();
+  if (!user) redirect("/member/login");
+  return user;
+}
+
 export async function createDemoAccounts() {
   const supabase = createAdminClient();
   const accounts: { email: string; password: string; name: string; role: User["role"] }[] = [

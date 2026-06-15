@@ -12,6 +12,9 @@ import { getAllCourses, getCourseBySlug, formatPriceDZD } from "@/lib/courses";
 import { type Locale } from "@/i18n/routing";
 import { ArrowLeft, Check, Send } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { SchemaOrg } from "@/components/schema-org";
+import { buildCourseSchema, buildBreadcrumbSchema } from "@/lib/schema-org";
+import { buildAdminUrl, buildPublicUrl } from "@/lib/env";
 
 type ProgramItem = {
   title: string;
@@ -50,7 +53,27 @@ export default async function FormationDetailPage({
   const title = course.title[typedLocale] ?? course.title.en;
 
   return (
-    <section className="py-20">
+    <>
+      <SchemaOrg
+        data={[
+          buildCourseSchema({
+            title,
+            description: detail?.description ?? "",
+            slug,
+            priceDZD: course.priceDZD,
+            image: course.image,
+            locale: typedLocale,
+          }),
+          buildBreadcrumbSchema([
+            { name: "Formations", item: buildPublicUrl(typedLocale, "/formations") },
+            {
+              name: title,
+              item: buildPublicUrl(typedLocale, `/formations/${slug}`),
+            },
+          ]),
+        ]}
+      />
+      <section className="py-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <Link
           href="/formations"
@@ -116,7 +139,7 @@ export default async function FormationDetailPage({
                 {formatPriceDZD(course.priceDZD, typedLocale)}
               </p>
               <Link
-                href={`/checkout/${course.slug}`}
+                href={buildAdminUrl(typedLocale, `/checkout/${course.slug}`)}
                 className={cn(
                   buttonVariants({ size: "lg" }),
                   "mt-6 w-full bg-brand-accent text-white hover:bg-brand-accent/90"
@@ -130,5 +153,6 @@ export default async function FormationDetailPage({
         </div>
       </div>
     </section>
+    </>
   );
 }

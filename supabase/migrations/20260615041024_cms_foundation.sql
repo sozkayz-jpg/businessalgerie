@@ -15,6 +15,8 @@ CREATE TABLE IF NOT EXISTS site_settings (
     tagline jsonb NOT NULL DEFAULT '{"fr":"Formations et accompagnement marketing digital en Algérie.","ar":"دورات تدريبية ومرافقة في التسويق الرقمي في الجزائر.","en":"Digital marketing training and coaching in Algeria."}',
     logo_url text,
     favicon_url text,
+    logo_width int NOT NULL DEFAULT 32,
+    logo_height int NOT NULL DEFAULT 32,
     colors jsonb NOT NULL DEFAULT '{
         "primary":"#0f172a",
         "accent":"#f97316",
@@ -38,6 +40,32 @@ CREATE TABLE IF NOT EXISTS site_settings (
     }',
     pixels jsonb NOT NULL DEFAULT '{"facebook":null,"tiktok":null,"linkedin":null}',
     analytics jsonb NOT NULL DEFAULT '{"ga4MeasurementId":null,"searchConsoleHtmlTag":null}',
+    local_business jsonb NOT NULL DEFAULT '{
+        "name":"Business Algerie",
+        "description":"Agence de marketing digital et formations pour entrepreneurs algériens.",
+        "url":"https://businessalgerie.vercel.app",
+        "telephone":"+213",
+        "email":"contact@businessalgerie.com",
+        "address":{
+            "streetAddress":"",
+            "addressLocality":"Alger",
+            "addressRegion":"Alger",
+            "postalCode":"16000",
+            "addressCountry":"DZ"
+        },
+        "geo":{"latitude":36.7538,"longitude":3.0588},
+        "openingHours":["Mo-Fr 09:00-17:00"],
+        "image":"/images/hero.webp",
+        "sameAs":[
+            "https://facebook.com/businessalgerie",
+            "https://instagram.com/businessalgerie",
+            "https://linkedin.com/company/businessalgerie",
+            "https://youtube.com/@businessalgerie"
+        ],
+        "priceRange":"$$",
+        "areaServed":"Algérie",
+        "hasMap":"https://www.google.com/maps/search/?api=1&query=Alger,+Algérie"
+    }',
     updated_at timestamptz NOT NULL DEFAULT now()
 );
 

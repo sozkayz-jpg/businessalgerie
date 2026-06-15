@@ -16,9 +16,10 @@ export type BlogPost = {
   readingTime: number;
   videoId?: string;
   image?: string;
+  author?: string;
 };
 
-const STATIC_POSTS: BlogPost[] = [
+export const STATIC_POSTS: BlogPost[] = [
   {
     slug: "risque-facebook",
     title: {
