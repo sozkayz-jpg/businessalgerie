@@ -24,8 +24,9 @@ type CourseDetail = {
   program?: ProgramItem[];
 };
 
-export function generateStaticParams() {
-  return getAllCourses().map((course) => ({ slug: course.slug }));
+export async function generateStaticParams() {
+  const courses = await getAllCourses();
+  return courses.map((course) => ({ slug: course.slug }));
 }
 
 export default async function FormationDetailPage({
@@ -37,7 +38,7 @@ export default async function FormationDetailPage({
   const typedLocale = locale as Locale;
   setRequestLocale(typedLocale);
 
-  const course = getCourseBySlug(slug);
+  const course = await getCourseBySlug(slug);
   if (!course) {
     notFound();
   }

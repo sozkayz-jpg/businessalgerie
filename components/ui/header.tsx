@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import Image from "next/image";
 import { Menu, Globe, ChevronDown } from "lucide-react";
 import { Button, buttonVariants } from "@/components/ui/button";
 import {
@@ -25,6 +26,7 @@ import {
 } from "@/i18n/routing";
 import { useTranslations } from "next-intl";
 import { cn } from "@/lib/utils";
+import type { Localized } from "@/lib/cms/types";
 
 const navKeys = [
   "home",
@@ -47,9 +49,13 @@ function navHref(key: (typeof navKeys)[number]) {
 export function Header({
   locale,
   dir,
+  brandName,
+  logoUrl,
 }: {
   locale: Locale;
   dir: "ltr" | "rtl";
+  brandName: Localized<string>;
+  logoUrl: string | null;
 }) {
   const t = useTranslations();
   const router = useRouter();
@@ -69,7 +75,10 @@ export function Header({
           href="/"
           className="flex items-center gap-2 font-heading text-lg font-bold text-primary"
         >
-          <span>{t("brand.name")}</span>
+          {logoUrl && (
+            <Image src={logoUrl} alt={brandName[locale]} width={32} height={32} className="size-8 object-contain" />
+          )}
+          <span>{brandName[locale]}</span>
         </Link>
 
         <nav className="hidden items-center gap-6 md:flex">
@@ -128,7 +137,7 @@ export function Header({
             />
             <SheetContent side={sheetSide} className="w-3/4 sm:max-w-sm">
               <SheetHeader>
-                <SheetTitle>{t("brand.name")}</SheetTitle>
+                <SheetTitle>{brandName[locale]}</SheetTitle>
               </SheetHeader>
               <nav className="mt-6 flex flex-col gap-2">
                 {navKeys.map((key) => (

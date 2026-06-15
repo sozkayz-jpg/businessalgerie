@@ -1,3 +1,12 @@
+import {
+  getAllPosts,
+  getPostBySlug as getCmsPostBySlug,
+  getPostTitle,
+  getPostExcerpt,
+  getPostCategory,
+} from "./cms/posts";
+import type { BlogPost as CmsBlogPost } from "./cms/posts";
+
 export type BlogPost = {
   slug: string;
   title: Record<"fr" | "ar" | "en", string>;
@@ -9,7 +18,7 @@ export type BlogPost = {
   image?: string;
 };
 
-export const BLOG_POSTS: BlogPost[] = [
+const STATIC_POSTS: BlogPost[] = [
   {
     slug: "risque-facebook",
     title: {
@@ -23,11 +32,7 @@ export const BLOG_POSTS: BlogPost[] = [
       en: "Algorithms change, accounts can be suspended, and the audience isn't yours. Here's how to diversify your online presence.",
     },
     date: "2026-05-12",
-    category: {
-      fr: "Stratégie digitale",
-      ar: "استراتيجية رقمية",
-      en: "Digital strategy",
-    },
+    category: { fr: "Stratégie digitale", ar: "استراتيجية رقمية", en: "Digital strategy" },
     readingTime: 5,
     videoId: "dQw4w9WgXcQ",
     image: "/images/blog-risque-facebook.webp",
@@ -45,11 +50,7 @@ export const BLOG_POSTS: BlogPost[] = [
       en: "Website, email list, owned content: discover the pillars of a resilient business against third-party platforms.",
     },
     date: "2026-05-19",
-    category: {
-      fr: "Autonomie",
-      ar: "استقلالية",
-      en: "Independence",
-    },
+    category: { fr: "Autonomie", ar: "استقلالية", en: "Independence" },
     readingTime: 6,
     videoId: "dQw4w9WgXcQ",
     image: "/images/blog-independance-digitale.webp",
@@ -67,11 +68,7 @@ export const BLOG_POSTS: BlogPost[] = [
       en: "Domain name, hosting, design, content: a practical guide to launching a professional website without getting lost.",
     },
     date: "2026-06-02",
-    category: {
-      fr: "Création web",
-      ar: "إنشاء الويب",
-      en: "Web creation",
-    },
+    category: { fr: "Création web", ar: "إنشاء الويب", en: "Web creation" },
     readingTime: 7,
     videoId: "dQw4w9WgXcQ",
     image: "/images/blog-premier-site-web.webp",
@@ -89,21 +86,38 @@ export const BLOG_POSTS: BlogPost[] = [
       en: "Cash on delivery, logistics, customer trust: the keys to selling online effectively in the Algerian market.",
     },
     date: "2026-06-10",
-    category: {
-      fr: "E-commerce",
-      ar: "تجارة إلكترونية",
-      en: "E-commerce",
-    },
+    category: { fr: "E-commerce", ar: "تجارة إلكترونية", en: "E-commerce" },
     readingTime: 6,
     videoId: "dQw4w9WgXcQ",
     image: "/images/blog-e-commerce-algerie.webp",
   },
 ];
 
-export function getAllBlogPosts(): BlogPost[] {
-  return BLOG_POSTS;
+function mapCmsPost(post: CmsBlogPost): BlogPost {
+  return {
+    slug: post.slug,
+    title: post.title,
+    excerpt: post.excerpt,
+    date: post.published_at ? post.published_at.slice(0, 10) : post.created_at.slice(0, 10),
+    category: post.category,
+    readingTime: post.reading_time,
+    videoId: post.video_id || undefined,
+    image: post.image || undefined,
+  };
 }
 
-export function getBlogPostBySlug(slug: string): BlogPost | undefined {
-  return BLOG_POSTS.find((post) => post.slug === slug);
+export async function getAllBlogPosts(): Promise<BlogPost[]> {
+  const cms = await getAllPosts();
+  if (cms.length > 0) return cms.map(mapCmsPost);
+  return STATIC_POSTS;
+}
+
+export function getAllBlogPostsSync(): BlogPost[] {
+  return STATIC_POSTS;
+}
+
+export async function getBlogPostBySlug(slug: string): Promise<BlogPost | undefined> {
+  const cms = await getCmsPostBySlug(slug);
+  if (cms) return mapCmsPost(cms);
+  return STATIC_POSTS.find((p) => p.slug === slug);
 }

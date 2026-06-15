@@ -13,7 +13,7 @@ export default async function FormationsPage({
   setRequestLocale(typedLocale);
 
   const t = await getTranslations();
-  const courses = getAllCourses();
+  const courses = await getAllCourses();
 
   return (
     <section className="py-20">

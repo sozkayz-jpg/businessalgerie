@@ -1,3 +1,12 @@
+import {
+  getAllCourses as getAllCmsCourses,
+  getCourseBySlug as getCmsCourseBySlug,
+  getFlagshipCourse as getCmsFlagshipCourse,
+  formatPriceDZD as formatCmsPriceDZD,
+  getCourseTitle,
+} from "./cms/courses";
+import type { Course as CmsCourse } from "./cms/courses";
+
 export type Course = {
   slug: string;
   title: Record<"fr" | "ar" | "en", string>;
@@ -6,7 +15,7 @@ export type Course = {
   image?: string;
 };
 
-export const COURSES: Course[] = [
+const STATIC_COURSES: Course[] = [
   {
     slug: "facebook-to-website",
     title: {
@@ -50,23 +59,38 @@ export const COURSES: Course[] = [
   },
 ];
 
-export function getAllCourses(): Course[] {
-  return COURSES;
+function mapCmsCourse(course: CmsCourse): Course {
+  return {
+    slug: course.slug,
+    title: course.title,
+    priceDZD: course.price_dzd,
+    isFlagship: course.is_flagship,
+    image: course.image || undefined,
+  };
 }
 
-export function getFlagshipCourse(): Course | undefined {
-  return COURSES.find((course) => course.isFlagship);
+export async function getAllCourses(): Promise<Course[]> {
+  const cms = await getAllCmsCourses();
+  if (cms.length > 0) return cms.map(mapCmsCourse);
+  return STATIC_COURSES;
 }
 
-export function getCourseBySlug(slug: string): Course | undefined {
-  return COURSES.find((course) => course.slug === slug);
+export function getAllCoursesSync(): Course[] {
+  return STATIC_COURSES;
+}
+
+export async function getFlagshipCourse(): Promise<Course | undefined> {
+  const cms = await getCmsFlagshipCourse();
+  if (cms) return mapCmsCourse(cms);
+  return STATIC_COURSES.find((c) => c.isFlagship);
+}
+
+export async function getCourseBySlug(slug: string): Promise<Course | undefined> {
+  const cms = await getCmsCourseBySlug(slug);
+  if (cms) return mapCmsCourse(cms);
+  return STATIC_COURSES.find((c) => c.slug === slug);
 }
 
 export function formatPriceDZD(price: number, locale: string): string {
-  const tag =
-    locale === "ar" ? "ar-DZ" : locale === "en" ? "en-DZ" : "fr-DZ";
-  return new Intl.NumberFormat(tag, {
-    style: "decimal",
-    maximumFractionDigits: 0,
-  }).format(price);
+  return formatCmsPriceDZD(price, locale);
 }

@@ -6,7 +6,8 @@ import { Link } from "@/i18n/routing";
 import { buttonVariants } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { YouTubeEmbed } from "@/components/youtube-embed";
-import { getBlogPostBySlug, type BlogPost } from "@/lib/blog";
+import { ShareButtons } from "@/components/share-buttons";
+import { getBlogPostBySlug, getAllBlogPosts, type BlogPost } from "@/lib/blog";
 import { routing, type Locale } from "@/i18n/routing";
 import { ArrowLeft, Calendar, Clock } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -369,9 +370,10 @@ const ARTICLES: Record<BlogPost["slug"], ArticleContent> = {
   },
 };
 
-export function generateStaticParams() {
+export async function generateStaticParams() {
+  const posts = await getAllBlogPosts();
   return routing.locales.flatMap((locale) =>
-    Object.keys(ARTICLES).map((slug) => ({ locale, slug }))
+    posts.map((post) => ({ locale, slug: post.slug }))
   );
 }
 
@@ -381,7 +383,7 @@ export async function generateMetadata({
   params: Promise<{ locale: string; slug: string }>;
 }): Promise<Metadata> {
   const { locale, slug } = await params;
-  const post = getBlogPostBySlug(slug);
+  const post = await getBlogPostBySlug(slug);
   if (!post) {
     return {};
   }
@@ -401,7 +403,7 @@ export default async function BlogArticlePage({
   const typedLocale = locale as Locale;
   setRequestLocale(typedLocale);
 
-  const post = getBlogPostBySlug(slug);
+  const post = await getBlogPostBySlug(slug);
   if (!post) {
     notFound();
   }
@@ -505,7 +507,8 @@ export default async function BlogArticlePage({
             )}
           </div>
 
-          <div className="mt-12 border-t pt-8">
+          <div className="mt-12 space-y-6 border-t pt-8">
+            <ShareButtons title={title} />
             <Link
               href="/blog"
               className={cn(

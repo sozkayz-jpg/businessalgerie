@@ -13,7 +13,7 @@ export default async function BlogPage({
   setRequestLocale(typedLocale);
 
   const t = await getTranslations("blog");
-  const posts = getAllBlogPosts();
+  const posts = await getAllBlogPosts();
 
   return (
     <>

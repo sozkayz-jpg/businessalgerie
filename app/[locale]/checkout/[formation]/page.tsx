@@ -4,8 +4,9 @@ import { getCourseBySlug, getAllCourses, formatPriceDZD } from "@/lib/courses";
 import { type Locale } from "@/i18n/routing";
 import { CheckoutForm } from "@/components/checkout-form";
 
-export function generateStaticParams() {
-  return getAllCourses().map((course) => ({ formation: course.slug }));
+export async function generateStaticParams() {
+  const courses = await getAllCourses();
+  return courses.map((course) => ({ formation: course.slug }));
 }
 
 export default async function CheckoutPage({
@@ -17,7 +18,7 @@ export default async function CheckoutPage({
   const typedLocale = locale as Locale;
   setRequestLocale(typedLocale);
 
-  const course = getCourseBySlug(formation);
+  const course = await getCourseBySlug(formation);
   if (!course) {
     notFound();
   }

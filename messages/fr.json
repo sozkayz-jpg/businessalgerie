@@ -503,6 +503,50 @@
       "paid": "Payé",
       "validated": "Validée",
       "rejected": "Refusée"
+    },
+    "site": {
+      "title": "Site & marque",
+      "subtitle": "Personnalisez le logo, les couleurs, le SEO par défaut et les intégrations.",
+      "tabs": {
+        "brand": "Marque",
+        "design": "Design",
+        "seo": "SEO",
+        "integrations": "Intégrations"
+      },
+      "brand_name": "Nom de la marque",
+      "tagline": "Slogan",
+      "logo": "Logo",
+      "favicon": "Favicon",
+      "titleTemplate": "Template de title",
+      "defaultDescription": "Description par défaut",
+      "defaultKeywords": "Mots-clés par défaut",
+      "ogImage": "Image Open Graph",
+      "save": "Enregistrer",
+      "saved": "Enregistré",
+      "error": "Erreur"
+    },
+    "pages": {
+      "title": "Pages",
+      "subtitle": "Gérez les pages du site.",
+      "edit": "Éditer la page"
+    },
+    "blog": {
+      "title": "Blog",
+      "subtitle": "Gérez les articles de blog.",
+      "edit": "Éditer l'article"
+    },
+    "courses": {
+      "title": "Formations",
+      "subtitle": "Gérez les formations.",
+      "edit": "Éditer la formation"
+    },
+    "orders": {
+      "title": "Commandes",
+      "subtitle": "Validez ou refusez les commandes."
+    },
+    "media": {
+      "title": "Médias",
+      "subtitle": "Gérez les images uploadées."
     }
   }
 }

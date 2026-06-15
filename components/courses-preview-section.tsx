@@ -13,7 +13,7 @@ export async function CoursesPreviewSection({
   locale: Locale;
 }) {
   const t = await getTranslations("home.courses_preview");
-  const courses = getAllCourses().slice(0, 3);
+  const courses = (await getAllCourses()).slice(0, 3);
 
   return (
     <section className="bg-brand-soft py-20 md:py-28">

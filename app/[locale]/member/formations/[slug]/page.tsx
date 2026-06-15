@@ -9,8 +9,9 @@ import { YouTubeEmbed } from "@/components/youtube-embed";
 import { cn } from "@/lib/utils";
 import { ArrowLeft } from "lucide-react";
 
-export function generateStaticParams() {
-  return getAllCourses().map((course) => ({ slug: course.slug }));
+export async function generateStaticParams() {
+  const courses = await getAllCourses();
+  return courses.map((course) => ({ slug: course.slug }));
 }
 
 export default async function MemberCoursePage({
@@ -24,7 +25,7 @@ export default async function MemberCoursePage({
 
   await requireSession();
 
-  const course = getCourseBySlug(slug);
+  const course = await getCourseBySlug(slug);
   if (!course) {
     notFound();
   }

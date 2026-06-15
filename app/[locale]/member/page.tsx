@@ -20,7 +20,7 @@ export default async function MemberDashboardPage({
 
   const user = await requireSession();
   const t = await getTranslations("member");
-  const courses = getAllCourses();
+  const courses = await getAllCourses();
 
   return (
     <section className="py-20">

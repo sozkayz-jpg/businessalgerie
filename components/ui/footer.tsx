@@ -1,5 +1,6 @@
 import { Link } from "@/i18n/routing";
-import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
+import type { Localized } from "@/lib/cms/types";
 
 const navKeys = [
   "home",
@@ -19,8 +20,8 @@ function navHref(key: (typeof navKeys)[number]) {
   return `/${key}`;
 }
 
-export function Footer() {
-  const t = useTranslations();
+export async function Footer({ brandName }: { brandName: Localized<string> }) {
+  const t = await getTranslations();
   const year = new Date().getFullYear();
 
   return (
@@ -29,7 +30,7 @@ export function Footer() {
         <div className="grid gap-8 md:grid-cols-3">
           <div>
             <h3 className="font-heading text-lg font-bold text-primary">
-              {t("brand.name")}
+              {brandName.fr}
             </h3>
             <p className="mt-2 text-sm text-brand-text">{t("brand.agency")}</p>
             <p className="mt-4 text-sm text-brand-text">
