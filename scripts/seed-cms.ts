@@ -433,9 +433,9 @@ async function seedCourses() {
   const courseSlugs = ["facebook-to-website", "woocommerce-ecommerce", "copywriting-algerie", "trafic-publicites"];
 
   const courses = courseSlugs.map((slug) => {
-    const existingFr = messages.fr.COURSES?.find((c: any) => c.slug === slug) || messages.fr.courses?.find((c: any) => c.slug === slug);
-    const existingAr = messages.ar.COURSES?.find((c: any) => c.slug === slug) || messages.ar.courses?.find((c: any) => c.slug === slug);
-    const existingEn = messages.en.COURSES?.find((c: any) => c.slug === slug) || messages.en.courses?.find((c: any) => c.slug === slug);
+    const existingFr = messages.fr.COURSES?.find((c: any) => c.slug === slug);
+    const existingAr = messages.ar.COURSES?.find((c: any) => c.slug === slug);
+    const existingEn = messages.en.COURSES?.find((c: any) => c.slug === slug);
 
     const get = (c: any) =>
       c || {
