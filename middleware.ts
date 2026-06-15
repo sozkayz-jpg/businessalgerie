@@ -33,7 +33,9 @@ export default async function middleware(request: NextRequest) {
 
   const { data } = await supabase.auth.getUser();
   const pathname = request.nextUrl.pathname;
-  const isProtected = pathname.includes("/member") || pathname.includes("/admin");
+  const isMemberLogin = pathname.includes("/member/login");
+  const isProtected =
+    (pathname.includes("/member") && !isMemberLogin) || pathname.includes("/admin");
 
   if (isProtected && !data.user) {
     const locale = pathname.split("/")[1] || routing.defaultLocale;
