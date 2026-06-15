@@ -2,7 +2,12 @@ import { NextRequest } from "next/server";
 import { requireAdmin } from "@/lib/admin-auth";
 import { createAdminClient } from "@/lib/supabase/admin";
 
-export async function GET() {
+export async function GET(request: NextRequest) {
+  const { error: authError } = await requireAdmin(request);
+  if (authError) {
+    return Response.json({ ok: false, error: authError }, { status: 401 });
+  }
+
   const supabase = createAdminClient();
   const { data, error } = await supabase
     .from("site_settings")

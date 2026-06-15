@@ -3,6 +3,11 @@ import { requireAdmin } from "@/lib/admin-auth";
 import { createAdminClient } from "@/lib/supabase/admin";
 
 export async function GET(request: NextRequest) {
+  const { error: authError } = await requireAdmin(request);
+  if (authError) {
+    return Response.json({ ok: false, error: authError }, { status: 401 });
+  }
+
   const { searchParams } = new URL(request.url);
   const slug = searchParams.get("slug");
 
